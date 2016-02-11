@@ -76,9 +76,16 @@
     [self.view addSubview:self.imageView1];
     self.imageView1.frame = CGRectMake(0.0, 120.0, self.view.bounds.size.width, 447.0);
     
-    NSURL *url1 = [[NSBundle mainBundle] URLForResource:@"rock" withExtension:@"gif"];
-    NSData *data1 = [NSData dataWithContentsOfURL:url1];
-    FLAnimatedImage *animatedImage1 = [FLAnimatedImage animatedImageWithGIFData:data1];
+//    NSURL *url1 = [[NSBundle mainBundle] URLForResource:@"rock" withExtension:@"gif"];
+//    NSData *data1 = [NSData dataWithContentsOfURL:url1];
+    
+    NSMutableArray *imageNames = [NSMutableArray new];
+    for (int i = 0; i < 20; i++) {
+        [imageNames addObject:[NSString stringWithFormat:@"%d", i]];
+    }
+    
+    FLAnimatedImage *animatedImage1 = [[FLAnimatedImage alloc] initWitImageNames:imageNames optimalFrameCacheSize:0 predrawingEnabled:YES];
+//    FLAnimatedImage *animatedImage1 = [FLAnimatedImage animatedImageWithGIFData:data1];
     self.imageView1.animatedImage = animatedImage1;
     
     // 2
@@ -92,7 +99,7 @@
     
     NSURL *url2 = [NSURL URLWithString:@"https://cloud.githubusercontent.com/assets/1567433/10417835/1c97e436-7052-11e5-8fb5-69373072a5a0.gif"];
     [self loadAnimatedImageWithURL:url2 completion:^(FLAnimatedImage *animatedImage) {
-        self.imageView2.animatedImage = animatedImage;
+        self.imageView2.animatedImage = nil;
 
         // Set up debug UI for image 2
 #if defined(DEBUG) && DEBUG
