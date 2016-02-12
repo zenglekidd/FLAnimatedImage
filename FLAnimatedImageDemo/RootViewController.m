@@ -10,7 +10,7 @@
 #import "RootViewController.h"
 #import <FLAnimatedImage/FLAnimatedImage.h>
 #import "DebugView.h"
-
+#import <FLAnimatedImage/FLAnimatedImageView.h>
 
 @interface RootViewController ()
 
@@ -26,6 +26,8 @@
 @property (nonatomic, strong) DebugView *debugView1;
 @property (nonatomic, strong) DebugView *debugView2;
 @property (nonatomic, strong) DebugView *debugView3;
+
+@property (nonatomic, strong) UISlider *slider;
 
 @end
 
@@ -63,7 +65,7 @@
     self.subtitleLabel.frame = CGRectMake(20.0, 74.0, self.subtitleLabel.bounds.size.width, self.subtitleLabel.bounds.size.height);
     self.memoryWarningButton.frame = CGRectMake(544.0, 69.0, self.memoryWarningButton.bounds.size.width, self.memoryWarningButton.bounds.size.height);
     
-    
+    self.slider.value = 10;
     
     // Setup the three `FLAnimatedImageView`s and load GIFs into them:
     
@@ -80,7 +82,7 @@
 //    NSData *data1 = [NSData dataWithContentsOfURL:url1];
     
     NSMutableArray *imageNames = [NSMutableArray new];
-    for (int i = 0; i < 20; i++) {
+    for (int i = 0; i < 100; i++) {
         [imageNames addObject:[NSString stringWithFormat:@"%d", i]];
     }
     
@@ -99,7 +101,7 @@
     
     NSURL *url2 = [NSURL URLWithString:@"https://cloud.githubusercontent.com/assets/1567433/10417835/1c97e436-7052-11e5-8fb5-69373072a5a0.gif"];
     [self loadAnimatedImageWithURL:url2 completion:^(FLAnimatedImage *animatedImage) {
-        self.imageView2.animatedImage = nil;
+        self.imageView2.animatedImage = animatedImage;
 
         // Set up debug UI for image 2
 #if defined(DEBUG) && DEBUG
@@ -150,6 +152,9 @@
 
 
 #pragma mark -
+- (void)valueChanged:(UISlider *)sender {
+    [self.imageView1 setFpsValue:sender.value];
+}
 
 - (UILabel *)titleLabel
 {
@@ -234,6 +239,18 @@
     _debugView3.frame = self.imageView3.bounds;
     
     return _debugView3;
+}
+
+- (UISlider *)slider {
+    if (!_slider) {
+        _slider = [[UISlider alloc] initWithFrame:CGRectMake(10, 80, 480, 50)];
+        _slider.minimumValue = 1;
+        _slider.maximumValue = 16;
+        [_slider addTarget:self action:@selector(valueChanged:) forControlEvents:UIControlEventValueChanged];
+    }
+    [self.view addSubview:_slider];
+    
+    return _slider;
 }
 
 /// Even though NSURLCache *may* cache the results for remote images, it doesn't guarantee it.

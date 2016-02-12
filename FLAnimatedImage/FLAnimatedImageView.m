@@ -1,4 +1,4 @@
-//
+ //
 //  FLAnimatedImageView.h
 //  Flipboard
 //
@@ -108,6 +108,9 @@
     }
 }
 
+- (void)setFpsValue:(float)value {
+    _fps = value;
+}
 
 #pragma mark - Life Cycle
 
@@ -351,6 +354,9 @@ static NSUInteger gcd(NSUInteger a, NSUInteger b)
     // If we don't have a frame delay (e.g. corrupt frame), don't update the view but skip the playhead to the next frame (in else-block).
     if (delayTimeNumber) {
         NSTimeInterval delayTime = [delayTimeNumber floatValue];
+        if (_fps) {
+            delayTime = 1.0 / MAX(_fps, 1);
+        }
         // If we have a nil image (e.g. waiting for frame), don't update the view nor playhead.
         UIImage *image = [self.animatedImage imageLazilyCachedAtIndex:self.currentFrameIndex];
         if (image) {

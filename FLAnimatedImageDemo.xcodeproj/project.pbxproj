@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C76B3711BCAC32C00A589BB /* FLAnimatedImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C76B3701BCAC32C00A589BB /* FLAnimatedImage.framework */; };
 		870D79D51936EBFC009D1BCE /* rock.gif in Resources */ = {isa = PBXBuildFile; fileRef = 870D79D41936EBFC009D1BCE /* rock.gif */; };
 		872EBE70178B825500B7531B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 872EBE6F178B825500B7531B /* UIKit.framework */; };
 		872EBE72178B825500B7531B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 872EBE71178B825500B7531B /* Foundation.framework */; };
@@ -125,11 +124,27 @@
 		B7D8265E1C6D31EA004D60DA /* 97.png in Resources */ = {isa = PBXBuildFile; fileRef = B7D825FA1C6D31EA004D60DA /* 97.png */; };
 		B7D8265F1C6D31EA004D60DA /* 98.png in Resources */ = {isa = PBXBuildFile; fileRef = B7D825FB1C6D31EA004D60DA /* 98.png */; };
 		B7D826601C6D31EA004D60DA /* 99.png in Resources */ = {isa = PBXBuildFile; fileRef = B7D825FC1C6D31EA004D60DA /* 99.png */; };
+		B7D827311C6D7D19004D60DA /* FLAnimatedImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7D827301C6D7D19004D60DA /* FLAnimatedImage.framework */; };
+		B7D827391C6E90E4004D60DA /* FLAnimatedImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7D827381C6E90E4004D60DA /* FLAnimatedImage.framework */; };
+		B7D8273A1C6E90E4004D60DA /* FLAnimatedImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B7D827381C6E90E4004D60DA /* FLAnimatedImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B7D8273C1C6E91E1004D60DA /* FLAnimatedImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7D8273B1C6E91E1004D60DA /* FLAnimatedImage.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B7D827351C6D7F60004D60DA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B7D8273A1C6E90E4004D60DA /* FLAnimatedImage.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		0C22DAF41BCAC106006E1D3B /* FLAnimatedImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FLAnimatedImage.framework; path = "build/Debug-iphoneos/FLAnimatedImage.framework"; sourceTree = "<group>"; };
-		0C76B3701BCAC32C00A589BB /* FLAnimatedImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FLAnimatedImage.framework; path = "build/Debug-iphoneos/FLAnimatedImage.framework"; sourceTree = "<group>"; };
 		870D79D41936EBFC009D1BCE /* rock.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = rock.gif; path = "FLAnimatedImageDemo/test-gifs/rock.gif"; sourceTree = SOURCE_ROOT; };
 		872EBE6C178B825500B7531B /* FLAnimatedImageDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FLAnimatedImageDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		872EBE6F178B825500B7531B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -257,6 +272,9 @@
 		B7D825FA1C6D31EA004D60DA /* 97.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 97.png; path = Frames/97.png; sourceTree = "<group>"; };
 		B7D825FB1C6D31EA004D60DA /* 98.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 98.png; path = Frames/98.png; sourceTree = "<group>"; };
 		B7D825FC1C6D31EA004D60DA /* 99.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 99.png; path = Frames/99.png; sourceTree = "<group>"; };
+		B7D827301C6D7D19004D60DA /* FLAnimatedImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FLAnimatedImage.framework; path = /Users/zenglekidd/Documents/Doodlely/FLAnimatedImage/FLAnimatedImage.framework; sourceTree = "<absolute>"; };
+		B7D827381C6E90E4004D60DA /* FLAnimatedImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = FLAnimatedImage.framework; path = "/Users/zenglekidd/Library/Developer/Xcode/DerivedData/FLAnimatedImage-fridhwzzwzdthyazsduezxqwuqtv/Build/Products/Debug-iphoneos/FLAnimatedImage.framework"; sourceTree = "<absolute>"; };
+		B7D8273B1C6E91E1004D60DA /* FLAnimatedImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FLAnimatedImage.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,11 +282,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C76B3711BCAC32C00A589BB /* FLAnimatedImage.framework in Frameworks */,
 				872EBE72178B825500B7531B /* Foundation.framework in Frameworks */,
+				B7D8273C1C6E91E1004D60DA /* FLAnimatedImage.framework in Frameworks */,
+				B7D827391C6E90E4004D60DA /* FLAnimatedImage.framework in Frameworks */,
 				872EBE74178B825500B7531B /* CoreGraphics.framework in Frameworks */,
 				872EBE70178B825500B7531B /* UIKit.framework in Frameworks */,
 				872EBEBD178B8FA000B7531B /* QuartzCore.framework in Frameworks */,
+				B7D827311C6D7D19004D60DA /* FLAnimatedImage.framework in Frameworks */,
 				872EBEB3178B89DF00B7531B /* ImageIO.framework in Frameworks */,
 				872EBEBB178B8F9000B7531B /* MobileCoreServices.framework in Frameworks */,
 			);
@@ -280,6 +300,7 @@
 		872EBE63178B825500B7531B = {
 			isa = PBXGroup;
 			children = (
+				B7D827381C6E90E4004D60DA /* FLAnimatedImage.framework */,
 				872EBE75178B825500B7531B /* FLAnimatedImageDemo */,
 				872EBE6E178B825500B7531B /* Frameworks */,
 				872EBE6D178B825500B7531B /* Products */,
@@ -297,8 +318,7 @@
 		872EBE6E178B825500B7531B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0C76B3701BCAC32C00A589BB /* FLAnimatedImage.framework */,
-				0C22DAF41BCAC106006E1D3B /* FLAnimatedImage.framework */,
+				B7D8273B1C6E91E1004D60DA /* FLAnimatedImage.framework */,
 				872EBE71178B825500B7531B /* Foundation.framework */,
 				872EBE73178B825500B7531B /* CoreGraphics.framework */,
 				872EBE6F178B825500B7531B /* UIKit.framework */,
@@ -471,6 +491,7 @@
 				872EBE68178B825500B7531B /* Sources */,
 				872EBE69178B825500B7531B /* Frameworks */,
 				872EBE6A178B825500B7531B /* Resources */,
+				B7D827351C6D7F60004D60DA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -715,9 +736,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FLAnimatedImageDemo/FLAnimatedImageDemo-Prefix.pch";
 				INFOPLIST_FILE = "FLAnimatedImageDemo/FLAnimatedImageDemo-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flipboard.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = FLAnimatedImageDemo;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -732,9 +758,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FLAnimatedImageDemo/FLAnimatedImageDemo-Prefix.pch";
 				INFOPLIST_FILE = "FLAnimatedImageDemo/FLAnimatedImageDemo-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flipboard.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = FLAnimatedImageDemo;
 				TARGETED_DEVICE_FAMILY = 2;
